@@ -21,6 +21,9 @@ var extra_speed: float = 0.0
 
 func _ready():
 	Global.player = self
+	var tset = get_node("../TileMap").tile_set
+	tset.get_source(tset.get_source_id(0)).texture = load("res://sprites/tiles/ground_evil.png")
+	#sprite.sprite_frames.set_frame("move", 0, load("res://sprites/player/char_sheet_evil.png"))
 		
 func _process(delta):
 	if Input.is_action_just_pressed("interact"):

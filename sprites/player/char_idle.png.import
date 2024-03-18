@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpd6gvqq3xy2p"
-path="res://.godot/imported/moonboy_fall1.png-3cf027bdeb22509879ce846f167bb15b.ctex"
+uid="uid://c3y6piwc8hctl"
+path="res://.godot/imported/char_idle.png-9cfd680814a4e77c4c187399256cf5df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/player/moonboy_fall1.png"
-dest_files=["res://.godot/imported/moonboy_fall1.png-3cf027bdeb22509879ce846f167bb15b.ctex"]
+source_file="res://sprites/player/char_idle.png"
+dest_files=["res://.godot/imported/char_idle.png-9cfd680814a4e77c4c187399256cf5df.ctex"]
 
 [params]
 

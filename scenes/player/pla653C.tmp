@@ -1,6 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://dvckxtysha25e"]
+[gd_scene load_steps=23 format=3 uid="uid://dvckxtysha25e"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_5gihh"]
+[ext_resource type="Texture2D" path="res://sprites/player/moonboy_move1.png" id="2_3crv8"]
+[ext_resource type="Texture2D" path="res://sprites/player/moonboy_fall1.png" id="2_3okky"]
+[ext_resource type="Texture2D" path="res://sprites/player/moonboy_jump1.png" id="4_yax7v"]
 [ext_resource type="Texture2D" uid="uid://s27mwnog6iun" path="res://sprites/player/char_sheet.png" id="5_xtkec"]
 [ext_resource type="Script" path="res://scenes/player/animated_sprite.gd" id="6_5x17l"]
 [ext_resource type="Script" path="res://scenes/player/sprite_animation.gd" id="7_45es4"]
@@ -8,6 +11,66 @@
 [ext_resource type="Script" path="res://scenes/interactable/interactor.gd" id="8_fhok7"]
 [ext_resource type="Texture2D" uid="uid://cece1yuao441u" path="res://sprites/player/char_jump.png" id="9_rssid"]
 [ext_resource type="Texture2D" uid="uid://ck76cuik4k5mi" path="res://sprites/player/char_fall.png" id="10_6jcm7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcvtv"]
+atlas = ExtResource("5_xtkec")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnupi"]
+atlas = ExtResource("5_xtkec")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kh7l"]
+atlas = ExtResource("5_xtkec")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysy5a"]
+atlas = ExtResource("5_xtkec")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l2351"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3okky")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3crv8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_yax7v")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qcvtv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnupi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kh7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysy5a")
+}],
+"loop": true,
+"name": &"move",
+"speed": 16.0
+}]
 
 [sub_resource type="Resource" id="Resource_jptwy"]
 script = ExtResource("7_45es4")
@@ -47,7 +110,12 @@ radius = 32.0
 collision_layer = 2
 script = ExtResource("1_5gihh")
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_l2351")
+animation = &"move"
+
+[node name="Sprite2" type="Sprite2D" parent="."]
 texture = ExtResource("8_7ahfc")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
@@ -65,6 +133,10 @@ script = ExtResource("8_fhok7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactor"]
 shape = SubResource("CircleShape2D_7n6sy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+region_enabled = true
 
 [connection signal="area_entered" from="Interactor" to="Interactor" method="_on_area_entered"]
 [connection signal="area_exited" from="Interactor" to="Interactor" method="_on_area_exited"]

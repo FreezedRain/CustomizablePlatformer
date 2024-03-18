@@ -24,7 +24,10 @@ ParticleManager="*res://singletons/particle_manager.gd"
 
 window/size/viewport_width=800
 window/size/viewport_height=600
-window/stretch/aspect="ignore"
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_width"
+window/stretch/scale=2.0
+window/stretch/scale_mode="integer"
 
 [input]
 

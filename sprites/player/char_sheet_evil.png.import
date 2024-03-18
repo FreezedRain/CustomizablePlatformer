@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hpchd4a47f1r"
-path="res://.godot/imported/moonboy_move3.png-efbac8ac9d7da444dd79e94402e21a64.ctex"
+uid="uid://vpaij6rwplxi"
+path="res://.godot/imported/char_sheet_evil.png-027d043635c12fca748e29e454e0130f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/player/moonboy_move3.png"
-dest_files=["res://.godot/imported/moonboy_move3.png-efbac8ac9d7da444dd79e94402e21a64.ctex"]
+source_file="res://sprites/player/char_sheet_evil.png"
+dest_files=["res://.godot/imported/char_sheet_evil.png-027d043635c12fca748e29e454e0130f.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

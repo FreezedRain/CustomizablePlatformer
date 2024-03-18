@@ -1,4 +1,7 @@
-[gd_resource type="Theme" format=3 uid="uid://bju5trwlshhcr"]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bju5trwlshhcr"]
+
+[ext_resource type="FontFile" uid="uid://dxq7ve2vqjywy" path="res://fonts/tight_pixel.ttf" id="1_2eubd"]
 
 [resource]
-default_font_size = 0
+default_font = ExtResource("1_2eubd")
+default_font_size = 12
