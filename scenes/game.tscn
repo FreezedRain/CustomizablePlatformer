@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5tsf24vfygsb"]
+
+[ext_resource type="PackedScene" uid="uid://becos7vjcywmn" path="res://scenes/levels/level0.tscn" id="1_6i7sj"]
+[ext_resource type="Script" path="res://scenes/game.gd" id="1_m0nvb"]
+[ext_resource type="Theme" uid="uid://bju5trwlshhcr" path="res://fonts/theme.tres" id="3_cj3m1"]
+[ext_resource type="Script" path="res://scenes/ui/world_ui.gd" id="4_mt12e"]
+[ext_resource type="PackedScene" uid="uid://dx1ldoegx4265" path="res://scenes/ui/text_box.tscn" id="5_v6cbu"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_m0nvb")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+snap_2d_transforms_to_pixel = true
+snap_2d_vertices_to_pixel = true
+size = Vector2i(400, 300)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="SubViewportContainer/SubViewport"]
+
+[node name="Level0" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_6i7sj")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="WorldUI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_cj3m1")
+script = ExtResource("4_mt12e")
+text_box_scene = ExtResource("5_v6cbu")
+
+[node name="TextBox" parent="." instance=ExtResource("5_v6cbu")]
+offset_left = 552.0
+offset_top = 166.0
+offset_right = 732.0
+offset_bottom = 246.0

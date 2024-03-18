@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://dvckxtysha25e"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_5gihh"]
+[ext_resource type="Texture2D" uid="uid://blmp0me0kludr" path="res://sprites/player/moonboy_move1.png" id="2_3crv8"]
+[ext_resource type="Texture2D" uid="uid://cpd6gvqq3xy2p" path="res://sprites/player/moonboy_fall1.png" id="2_3okky"]
+[ext_resource type="Texture2D" uid="uid://bidfbuqkpqvbd" path="res://sprites/player/moonboy_move2.png" id="3_0dkaq"]
+[ext_resource type="Texture2D" uid="uid://hpchd4a47f1r" path="res://sprites/player/moonboy_move3.png" id="4_8pewc"]
+[ext_resource type="Texture2D" uid="uid://dax7ta3d0e4c6" path="res://sprites/player/moonboy_jump1.png" id="4_yax7v"]
+[ext_resource type="Texture2D" uid="uid://fo2ig3ptnyo7" path="res://sprites/player/moonboy_move4.png" id="5_fb77v"]
+[ext_resource type="Script" path="res://scenes/interactable/interactor.gd" id="8_fhok7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_27qke"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3okky")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3crv8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_yax7v")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3crv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0dkaq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8pewc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fb77v")
+}],
+"loop": true,
+"name": &"move",
+"speed": 16.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_idbsr"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7n6sy"]
+radius = 32.0
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_5gihh")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_27qke")
+animation = &"jump"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_idbsr")
+
+[node name="Interactor" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+script = ExtResource("8_fhok7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactor"]
+shape = SubResource("CircleShape2D_7n6sy")
+
+[connection signal="area_entered" from="Interactor" to="Interactor" method="_on_area_entered"]
+[connection signal="area_exited" from="Interactor" to="Interactor" method="_on_area_exited"]

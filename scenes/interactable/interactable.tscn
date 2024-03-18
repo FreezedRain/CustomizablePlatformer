@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3uljmkjejc6h"]
+
+[ext_resource type="Script" path="res://scenes/interactable/interactable.gd" id="1_bqpnv"]
+[ext_resource type="Texture2D" uid="uid://c46vd1phdg4sa" path="res://sprites/ui/blip.png" id="2_i5v6r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mck0"]
+size = Vector2(32, 32)
+
+[node name="Interactable" type="Area2D"]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_bqpnv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3mck0")
+
+[node name="Blip" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("2_i5v6r")
