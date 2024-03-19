@@ -45,8 +45,9 @@ func hide_text(instant):
 		return
 
 	reveal_tween = create_tween()
-	reveal_tween.tween_property(background, "scale", Vector2.ZERO, 0.15).from(Vector2.ONE).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-	reveal_tween.finished.connect(hide)
+	if reveal_tween:
+		reveal_tween.tween_property(background, "scale", Vector2.ZERO, 0.15).from(Vector2.ONE).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+		reveal_tween.finished.connect(hide)
 	
 func reset_animation():
 	if tween:

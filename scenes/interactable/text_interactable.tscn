@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://d4d1jyxxjdsy1"]
+[gd_scene load_steps=5 format=3 uid="uid://d4d1jyxxjdsy1"]
 
 [ext_resource type="PackedScene" uid="uid://c3uljmkjejc6h" path="res://scenes/interactable/interactable.tscn" id="1_as72y"]
 [ext_resource type="Script" path="res://scenes/interactable/text_interactable.gd" id="2_lpv07"]
 [ext_resource type="Script" path="res://scenes/ui/text_box.gd" id="3_80ffk"]
 [ext_resource type="Theme" uid="uid://bju5trwlshhcr" path="res://fonts/theme.tres" id="3_jpawk"]
-[ext_resource type="Texture2D" path="res://sprites/player/moonboy_move2.png" id="5_f31bf"]
 
 [node name="TextInteractable" instance=ExtResource("1_as72y")]
 script = ExtResource("2_lpv07")
@@ -54,5 +53,4 @@ visible_characters_behavior = 1
 
 [node name="Guy" type="Sprite2D" parent="." index="3"]
 modulate = Color(0.14902, 0.913725, 0, 1)
-texture = ExtResource("5_f31bf")
 flip_h = true

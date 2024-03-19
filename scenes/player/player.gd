@@ -1,9 +1,9 @@
 class_name Player extends CharacterBody2D
 
 # Movement
-const SPEED = 140
-const JUMP_VELOCITY = 200
-const GRAVITY = -560
+const SPEED = 152
+const JUMP_VELOCITY = 230
+const GRAVITY = -570
 const COYOTE_TIME = 0.1
 const JUMP_QUEUE_TIME = 0.1
 const DASH_SPEED = 14
@@ -21,8 +21,8 @@ var extra_speed: float = 0.0
 
 func _ready():
 	Global.player = self
-	var tset = get_node("../TileMap").tile_set
-	tset.get_source(tset.get_source_id(0)).texture = load("res://sprites/tiles/ground_evil.png")
+	#var tset = get_node("../TileMap").tile_set
+	#tset.get_source(tset.get_source_id(0)).texture = load("res://sprites/tiles/ground_evil.png")
 	#sprite.sprite_frames.set_frame("move", 0, load("res://sprites/player/char_sheet_evil.png"))
 		
 func _process(delta):

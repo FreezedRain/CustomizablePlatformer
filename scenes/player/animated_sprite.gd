@@ -12,8 +12,9 @@ func _process(delta):
 	t += delta
 	if t >= (1.0 / current.fps):
 		t -= 1.0 / current.fps
+		var frames = max(1, current.sprite.get_width() / 32)
 		# Go next frame
-		frame_idx = (frame_idx + 1) % current.frames
+		frame_idx = (frame_idx + 1) % frames
 		region_rect.position.x = 32 * frame_idx
 
 func play(anim_name):

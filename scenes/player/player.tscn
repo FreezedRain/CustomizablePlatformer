@@ -1,39 +1,53 @@
-[gd_scene load_steps=15 format=3 uid="uid://dvckxtysha25e"]
+[gd_scene load_steps=17 format=3 uid="uid://dvckxtysha25e"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_5gihh"]
-[ext_resource type="Texture2D" uid="uid://s27mwnog6iun" path="res://sprites/player/char_sheet.png" id="5_xtkec"]
+[ext_resource type="Script" path="res://scenes/sprites/loadable_texture.gd" id="5_jigj3"]
 [ext_resource type="Script" path="res://scenes/player/animated_sprite.gd" id="6_5x17l"]
 [ext_resource type="Script" path="res://scenes/player/sprite_animation.gd" id="7_45es4"]
 [ext_resource type="Texture2D" uid="uid://c3y6piwc8hctl" path="res://sprites/player/char_idle.png" id="8_7ahfc"]
 [ext_resource type="Script" path="res://scenes/interactable/interactor.gd" id="8_fhok7"]
-[ext_resource type="Texture2D" uid="uid://cece1yuao441u" path="res://sprites/player/char_jump.png" id="9_rssid"]
-[ext_resource type="Texture2D" uid="uid://ck76cuik4k5mi" path="res://sprites/player/char_fall.png" id="10_6jcm7"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_y6uc5"]
+script = ExtResource("5_jigj3")
+path = "player/char_sheet.png"
 
 [sub_resource type="Resource" id="Resource_jptwy"]
 script = ExtResource("7_45es4")
 name = "move"
-sprite = ExtResource("5_xtkec")
+sprite = SubResource("ImageTexture_y6uc5")
 fps = 16
 frames = 4
+
+[sub_resource type="ImageTexture" id="ImageTexture_8yyf0"]
+script = ExtResource("5_jigj3")
+path = "player/char_idle.png"
 
 [sub_resource type="Resource" id="Resource_2y3yl"]
 script = ExtResource("7_45es4")
 name = "idle"
-sprite = ExtResource("8_7ahfc")
+sprite = SubResource("ImageTexture_8yyf0")
 fps = 6
 frames = 1
+
+[sub_resource type="ImageTexture" id="ImageTexture_32yem"]
+script = ExtResource("5_jigj3")
+path = "player/char_jump.png"
 
 [sub_resource type="Resource" id="Resource_61bhu"]
 script = ExtResource("7_45es4")
 name = "jump"
-sprite = ExtResource("9_rssid")
+sprite = SubResource("ImageTexture_32yem")
 fps = 1
 frames = 1
+
+[sub_resource type="ImageTexture" id="ImageTexture_gh5nn"]
+script = ExtResource("5_jigj3")
+path = "player/char_fall.png"
 
 [sub_resource type="Resource" id="Resource_ukqbx"]
 script = ExtResource("7_45es4")
 name = "fall"
-sprite = ExtResource("10_6jcm7")
+sprite = SubResource("ImageTexture_gh5nn")
 fps = 1
 frames = 1
 
