@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://becos7vjcywmn"]
+[gd_scene load_steps=9 format=3 uid="uid://becos7vjcywmn"]
 
 [ext_resource type="Texture2D" uid="uid://cqkytfb6q45r" path="res://sprites/tiles/tilesheet_16.png" id="2_ma30e"]
 [ext_resource type="Script" path="res://scenes/sprites/loadable_tilemap.gd" id="3_s2ku2"]
 [ext_resource type="PackedScene" uid="uid://d4d1jyxxjdsy1" path="res://scenes/interactable/text_interactable.tscn" id="3_t6y12"]
 [ext_resource type="PackedScene" uid="uid://sqeggy6dyh5q" path="res://scenes/interactable/collectable.tscn" id="4_8djc3"]
+[ext_resource type="Script" path="res://scenes/sprites/loadable_text_asset.gd" id="4_cqjnf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_28fcb"]
 texture = ExtResource("2_ma30e")
@@ -485,6 +486,10 @@ terrain_set_0/terrain_0/name = "Ground"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/1 = SubResource("TileSetAtlasSource_28fcb")
 
+[sub_resource type="Resource" id="Resource_bnyuy"]
+script = ExtResource("4_cqjnf")
+path = "npc.txt"
+
 [node name="Level0" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -496,7 +501,7 @@ path = "tiles/tilesheet_16.png"
 
 [node name="TextInteractable" parent="." instance=ExtResource("3_t6y12")]
 position = Vector2(-145, -48)
-messages = Array[String](["Hello!", "How are you doing?", "How are you doing? ????"])
+text_asset = SubResource("Resource_bnyuy")
 
 [node name="Collectable" parent="." instance=ExtResource("4_8djc3")]
 position = Vector2(96, -80)

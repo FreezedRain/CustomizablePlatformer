@@ -23,7 +23,7 @@ frames = 4
 
 [node name="TextInteractable" instance=ExtResource("1_as72y")]
 script = ExtResource("2_lpv07")
-messages = Array[String]([])
+text_asset = null
 
 [node name="Blip" parent="." index="1"]
 position = Vector2(0, -28)

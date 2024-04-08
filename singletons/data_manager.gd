@@ -17,6 +17,15 @@ func _ready():
 func reload_all():
 	reload.emit()
 	
+func load_text(rel_path) -> String:
+	var abs_path = executable_path + 'text/' + rel_path
+	if FileAccess.file_exists(abs_path):
+		var file = FileAccess.open(abs_path, FileAccess.READ)
+		var text = file.get_as_text()
+		file.close()
+		return text
+	return "missing text"
+	
 func load_image(rel_path) -> Image:
 	var abs_path = executable_path + 'sprites/' + rel_path
 	if FileAccess.file_exists(abs_path):
