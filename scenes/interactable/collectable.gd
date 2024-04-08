@@ -1,10 +1,15 @@
 class_name Collectable extends Interactable
 
+var collected = false
+
 func _ready():
 	$Treasure.play("idle")
 
 func enter(interactor):
-	queue_free()
+	if !collected:
+		$collect.play()
+		collected = true
+		$Treasure.hide()
 
 func leave(interactor):
 	pass

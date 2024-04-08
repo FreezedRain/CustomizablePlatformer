@@ -84,8 +84,12 @@ func jump(multiplier=1):
 	global_position += Vector2.UP * 0.025 * multiplier
 	velocity.y = -JUMP_VELOCITY * multiplier
 	did_jump = true
+	$jump.pitch_scale = randf_range(0.8, 1);
+	$jump.play()
 
 func _on_landed():
+	$hit.pitch_scale = randf_range(1.1, 1.3);
+	$hit.play()
 	t_left_ground = 0
 	did_jump = false
 	just_landed = true

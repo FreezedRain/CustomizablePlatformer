@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d4d1jyxxjdsy1"]
+[gd_scene load_steps=12 format=3 uid="uid://d4d1jyxxjdsy1"]
 
 [ext_resource type="PackedScene" uid="uid://c3uljmkjejc6h" path="res://scenes/interactable/interactable.tscn" id="1_as72y"]
 [ext_resource type="Script" path="res://scenes/interactable/text_interactable.gd" id="2_lpv07"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scenes/sprites/loadable_texture.gd" id="5_hkh2o"]
 [ext_resource type="Texture2D" uid="uid://dc1klkna811wv" path="res://sprites/npc/npc_sheet.png" id="5_rdvao"]
 [ext_resource type="Script" path="res://scenes/player/sprite_animation.gd" id="6_b7qsi"]
+[ext_resource type="AudioStream" uid="uid://gkbtki8wp041" path="res://audio/bloop.wav" id="9_8frhe"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_r76wj"]
 script = ExtResource("5_hkh2o")
@@ -72,3 +73,6 @@ region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 script = ExtResource("5_dy35k")
 animations = Array[ExtResource("6_b7qsi")]([SubResource("Resource_y1jj3")])
+
+[node name="bloop" type="AudioStreamPlayer" parent="." index="4"]
+stream = ExtResource("9_8frhe")

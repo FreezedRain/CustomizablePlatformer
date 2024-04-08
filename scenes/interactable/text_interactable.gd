@@ -21,6 +21,7 @@ func leave(interactor):
 func interact(interactor):
 	super.interact(interactor)
 	blip.hide()
+	
 	if text_box.is_busy:
 		text_box.try_skip()
 		return
@@ -33,3 +34,6 @@ func interact(interactor):
 	
 	text_box.show_text(messages[message_idx])
 	message_idx += 1
+	
+	$bloop.pitch_scale = randf_range(0.9, 1.1)
+	$bloop.play()
