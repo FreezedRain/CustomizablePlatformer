@@ -8,6 +8,7 @@ var message_idx: int = 0
 func _ready():
 	super._ready()
 	text_box.hide_text(true)
+	$Guy.play("idle")
 
 func enter(interactor):
 	super.enter(interactor)

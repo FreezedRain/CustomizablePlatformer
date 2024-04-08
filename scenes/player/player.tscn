@@ -26,8 +26,8 @@ path = "player/char_idle.png"
 script = ExtResource("7_45es4")
 name = "idle"
 sprite = SubResource("ImageTexture_8yyf0")
-fps = 6
-frames = 1
+fps = 4
+frames = 4
 
 [sub_resource type="ImageTexture" id="ImageTexture_32yem"]
 script = ExtResource("5_jigj3")
@@ -53,9 +53,10 @@ frames = 1
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_idbsr"]
 radius = 8.0
+height = 26.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7n6sy"]
-radius = 32.0
+radius = 16.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -69,6 +70,7 @@ script = ExtResource("6_5x17l")
 animations = Array[ExtResource("7_45es4")]([SubResource("Resource_jptwy"), SubResource("Resource_2y3yl"), SubResource("Resource_61bhu"), SubResource("Resource_ukqbx")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_idbsr")
 
 [node name="Interactor" type="Area2D" parent="."]

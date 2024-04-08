@@ -3,7 +3,7 @@ class_name Player extends CharacterBody2D
 # Movement
 const SPEED = 152
 const JUMP_VELOCITY = 230
-const GRAVITY = -570
+const GRAVITY = -450
 const COYOTE_TIME = 0.1
 const JUMP_QUEUE_TIME = 0.1
 const DASH_SPEED = 14

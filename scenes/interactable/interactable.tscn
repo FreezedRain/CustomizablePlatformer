@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c46vd1phdg4sa" path="res://sprites/ui/blip.png" id="2_i5v6r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3mck0"]
-size = Vector2(32, 32)
+size = Vector2(64, 64)
 
 [node name="Interactable" type="Area2D"]
 collision_layer = 4
