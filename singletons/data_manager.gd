@@ -32,5 +32,13 @@ func load_image(rel_path) -> Image:
 		return Image.load_from_file(abs_path)
 	return ERROR_IMAGE
 
+func load_audio(rel_path) -> AudioStream:
+	var abs_path = executable_path + 'audio/' + rel_path
+	print(abs_path)
+	if FileAccess.file_exists(abs_path):
+		print("exists")
+		return load(abs_path)
+	return null
+
 func load_texture(rel_path) -> ImageTexture:
 	return ImageTexture.create_from_image(load_image(rel_path))

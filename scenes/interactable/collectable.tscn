@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/interactable/collectable.gd" id="1_aibwa"]
 [ext_resource type="Texture2D" uid="uid://brdbsa8aglgvm" path="res://sprites/treasure/treasure_sheet.png" id="2_lrih4"]
 [ext_resource type="Script" path="res://scenes/player/animated_sprite.gd" id="6_im1px"]
-[ext_resource type="AudioStream" uid="uid://dtchs6humo8df" path="res://audio/pickupCoin.wav" id="6_nlyqd"]
+[ext_resource type="AudioStream" uid="uid://dtchs6humo8df" path="res://build/audio/pickupCoin.wav" id="6_nlyqd"]
 [ext_resource type="Script" path="res://scenes/player/sprite_animation.gd" id="7_0qclk"]
 [ext_resource type="Script" path="res://scenes/sprites/loadable_texture.gd" id="8_r8316"]
 

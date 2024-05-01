@@ -1,8 +1,9 @@
 class_name Interactable extends Area2D
 
-@onready var blip = $Blip
+@onready var blip
 
 func _ready():
+	blip = $Blip
 	blip.hide()
 
 func enter(interactor):

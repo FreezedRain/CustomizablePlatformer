@@ -13,7 +13,7 @@ static func list_files_in_directory(path):
 				files.append(file)
 		dir.list_dir_end()
 	else:
-		print("Failed to load file, incorrect path!")
+		print("Failed to load file, incorrect path! " + path)
 	return files
 	
 static func get_random_v(from: float, to: float) -> Vector3:
