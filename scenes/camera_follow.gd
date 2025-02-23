@@ -22,5 +22,3 @@ func _process(delta):
 		tpos = startpos
 	
 	
-
-

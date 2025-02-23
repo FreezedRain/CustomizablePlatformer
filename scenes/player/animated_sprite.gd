@@ -31,4 +31,3 @@ func play(anim_name):
 			
 func stop():
 	pass
-
